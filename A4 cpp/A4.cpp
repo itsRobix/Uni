@@ -1,3 +1,7 @@
+//--Roberts-Novikovs--
+//A4 - Doti n veseli skaitļi. Noskaidrot, kāds ir mazākais skaitlis un cik ir skaitļu ar šādu vērtību.
+
+
 #include <iostream>
 using namespace std;
 
@@ -59,3 +63,4 @@ int main(){
         }  
     }
 }
+
