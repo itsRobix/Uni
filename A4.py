@@ -1,3 +1,6 @@
+#--Roberts-Novikovs--
+#A4 - Doti n veseli skaitļi. Noskaidrot, kāds ir mazākais skaitlis un cik ir skaitļu ar šādu vērtību.
+
 usrNum = 0          #Šeit tiks ievadīti skaitļi pārbaudei, pirms tie tiek pievienoti sarakstam
 usrNumList = []     #Šeit tiks glabāti visi lietotāja ievadītie skaitļi
 lowNumAmount = 0
@@ -48,5 +51,6 @@ while True:
             continue
         break
         
+
 
 
