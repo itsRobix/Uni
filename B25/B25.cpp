@@ -1,6 +1,8 @@
 //--Roberts-Novikovs--
 //Studenta apliecības nr. rn25007
 
+//Pabeigšanas datums 01.10.2025
+
 /* B25. Sastādīt programmu, kura saskaita un atņem racionālus skaitļus, racionālos skaitļus uzdodot kā divu veselu
    skaitļu pāri (1/3 tiek uzdota kā divi skaitļi 1 un 3). Rezultātam jābūt kā nesaīsināmam daļskaitlim. Uzrakstīt funkciju,
    kas saskaita 2 racionālus skaitļus un funkciju, kas pārveido racionālu skaitli par nesaīsināmu daļskaitli. */
@@ -98,10 +100,20 @@ int main(){
       daluStarp[0] = atnemt(skaitlis1[0], skaitlis2[0]);
       daluStarp[1] = skaitlis1[1];
 
-      cout << "Summa = " << daluSumma[0] << "/" << daluSumma[1] << endl;
-      cout << "Starpiiba = " << daluStarp[0] << "/" << daluStarp[1] << endl;
+      cout << "Summa = " << daluSumma[0] << "/" << daluSumma[1] << endl; //paziņo daļu summu
+      cout << "Starpiiba = " << daluStarp[0] << "/" << daluStarp[1] << endl; //paziņo daļu starpību
+      
 
-      saisinat(daluSumma[0], daluSumma[1], daluStarp[0], daluStarp[1]);
+      saisinat(daluSumma[0], daluSumma[1], daluStarp[0], daluStarp[1]);\
+
+      if(daluSumma[0] < 0 && daluSumma[1] < 0){
+         daluSumma[0] *= -1;     //Ja tiek dalīti 2 negatīvi skaitļi, tie...
+         daluSumma[1] *= -1;     //...tiek pārvērsti par pozitīvu daļu
+      }
+      if(daluStarp[0] < 0 && daluStarp[1] < 0){
+         daluStarp[0] *= -1;     //Ja tiek dalīti 2 negatīvi skaitļi, tie...
+         daluStarp[1] *= -1;     //...tiek pārvērsti par pozitīvu daļu
+      }
       cout << daluSumma[0] << "/" << daluSumma[1] << endl;
       cout << daluStarp[0] << "/" << daluStarp[1] << endl;
 
