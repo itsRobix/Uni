@@ -1,6 +1,8 @@
 #--Roberts-Novikovs--
 #Studenta apliecības nr. rn25007
 
+#Pabeigšanas datums 01.10.2025
+
 # B25. Sastādīt programmu, kura saskaita un atņem racionālus skaitļus, racionālos skaitļus uzdodot kā divu veselu
 # skaitļu pāri (1/3 tiek uzdota kā divi skaitļi 1 un 3). Rezultātam jābūt kā nesaīsināmam daļskaitlim. Uzrakstīt funkciju,
 # kas saskaita 2 racionālus skaitļus un funkciju, kas pārveido racionālu skaitli par nesaīsināmu daļskaitli.
@@ -31,7 +33,7 @@ def saisinats(x, y):
     if dalStarpLimits < 0:                  #Ja starpības limits ir negatīvs, to padara par pozitīvu skaitli |limits|
         dalStarpLimits = dalStarpLimits * -1
 #------------------------------------------------
-    print("dalSumLimits", dalSumLimits, "  dalStarpLimits", dalStarpLimits)
+    #print("dalSumLimits", dalSumLimits, "  dalStarpLimits", dalStarpLimits)    #TESTING PURPOSES ONLY
 
     for i in range(1, dalSumLimits+1):
         if(float(dalijumaSumma[0]) / i == float(dalijumaSumma[0]) // i and 
@@ -67,8 +69,7 @@ while True:
         skaitlis1.append(int(input("Ievadiet 1. daļas saucēju: ")))
         skaitlis2.append(int(input("Ievadiet 2. daļas skaitītāju: ")))
         skaitlis2.append(int(input("Ievadiet 2. daļas saucēju: ")))
-        if(skaitlis1[0] == 0 or skaitlis1[1] == 0
-            or skaitlis2[0] == 0 or skaitlis2[1] ==0):
+        if(skaitlis1[1] == 0 or skaitlis2[1] ==0):      #Liedz lietotājam ievadīt 0
             print("Tika ievadīta 0. Atkārtojiet skaitļu ievadi.")
             skaitlis1.clear()
             skaitlis2.clear()
@@ -99,6 +100,12 @@ while True:
 
     print("Kopīgais dalītājs summai = ", dalamaisSummai, " | Starpībai = ", dalamaisStarpibai)  #Paziņo lietotājam daļu kopīgos dalītājus  
 
+    if dalijumaSumma[0] < 0 and dalijumaSumma[1] < 0:
+        dalijumaSumma[0] *= -1 #Ja tiek dalīti 2 negatīvi skaitļi,...
+        dalijumaSumma[1] *= -1 #...padara daļu pozitīvu
+    if saisinataDalaStarp[0] < 0 and saisinataDalaStarp[1] < 0:
+        saisinataDalaStarp[0] *= -1 #Ja tiek dalīti 2 negatīvi skaitļi,...
+        saisinataDalaStarp[1] *= -1 #...padara daļu pozitīvu
     print("Saīsināta sumētā daļa = ", saisinataDalaSum)         #Izprintē rezultātus
     print("Saīsināta daļu starpība = ", saisinataDalaStarp)
     print("-----------------------------------------------")
