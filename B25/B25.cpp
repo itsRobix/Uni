@@ -5,20 +5,20 @@
 
 /* B25. Sastādīt programmu, kura saskaita un atņem racionālus skaitļus, racionālos skaitļus uzdodot kā divu veselu
    skaitļu pāri (1/3 tiek uzdota kā divi skaitļi 1 un 3). Rezultātam jābūt kā nesaīsināmam daļskaitlim. Uzrakstīt funkciju,
-   kas saskaita 2 racionālus skaitļus un funkciju, kas pārveido racionālu skaitli par nesaīsināmu daļskaitli. */
+   kas saskaita 2 racionālus skaitļus un funkciju, kas pārveido racionālu skaitli par nesaīsināmu daļskaitli. */
 
 
 #include <iostream>
 using namespace std;
 
-int skaitlis1[2];
+int skaitlis1[2]; //lietotāja ievadītās daļas [skaitītājs, saucējs]
 int skaitlis2[2];
 int saisinatasDalasKopa[4]; //Šeit saglabās saīsinātas daļas, lai pēc tam tās sadalītu savos mainīgajos
 
-int daluSumma[2];
+int daluSumma[2]; //lietotāja ievadīto daļu summa & starpība
 int daluStarp[2];
 
-int atkartot = 0;
+int atkartot = 0; //tiks izmantots, lai noskaidrotu, vai lietotājs vēlas atkārtoti izmantot programmu
 
 void novienadot(int &sk1, int &sa1, int &sk2, int &sa2){
    int x = sa1;   //saglabā 1.saucēja vērtību
@@ -31,13 +31,13 @@ void novienadot(int &sk1, int &sa1, int &sk2, int &sa2){
    }
 }
 
-int saskaitit(int &sk1, int &sk2){
+int saskaitit(int &sk1, int &sk2){  //saskaita abu daļu skaitītājus un atgriež vērtību
    int daluSum = sk1+sk2;
 
    return(daluSum);
 }
 
-int atnemt(int &sk1, int &sk2){
+int atnemt(int &sk1, int &sk2){  //atņem pirmās daļas skaitītāju no otrās daļas skaitītāja un atgriež vērtību
    int daluStarp = sk1-sk2;
 
    return(daluStarp);
@@ -86,25 +86,23 @@ int main(){
       cout << "Ievadiet 1. dalas daliitaaju: "; cin >> skaitlis1[1];    //daļas
       cout << "Ievadiet 2. dalas skaitiitaaju: "; cin >> skaitlis2[0];
       cout << "Ievadiet 2. dalas daliitaaju: "; cin >> skaitlis2[1];
-      if(skaitlis1[0] == 0 || skaitlis1[1] == 0
-      || skaitlis2[0] == 0 || skaitlis2[1] == 0) cout << "Ievadiita 0. Atkaartojiet skaitlu ievadi" << endl;
-      }while(skaitlis1[0] == 0 || skaitlis1[1] == 0 
-         || skaitlis2[0] == 0 || skaitlis2[1] == 0); //pārliecinas, ka ievadītais skaitlis nav 0
+      if(skaitlis1[1] == 0 || skaitlis2[1] == 0) cout << "Ievadiita 0. Atkaartojiet skaitlu ievadi" << endl;
+      }while(skaitlis1[1] == 0 || skaitlis2[1] == 0); //pārliecinas, ka ievadītais skaitlis nav 0
 
       novienadot(skaitlis1[0], skaitlis1[1], skaitlis2[0], skaitlis2[1]);
       cout << skaitlis1[0] << "/" << skaitlis1[1] << endl << skaitlis2[0] << "/" << skaitlis2[1] << endl;
 
-      daluSumma[0] = saskaitit(skaitlis1[0], skaitlis2[0]);
+      daluSumma[0] = saskaitit(skaitlis1[0], skaitlis2[0]);    //iegūst skaitītāju daļu summai
       daluSumma[1] = skaitlis1[1];
 
-      daluStarp[0] = atnemt(skaitlis1[0], skaitlis2[0]);
+      daluStarp[0] = atnemt(skaitlis1[0], skaitlis2[0]);       //iegūst skaitītāju daļu starpībai
       daluStarp[1] = skaitlis1[1];
 
       cout << "Summa = " << daluSumma[0] << "/" << daluSumma[1] << endl; //paziņo daļu summu
       cout << "Starpiiba = " << daluStarp[0] << "/" << daluStarp[1] << endl; //paziņo daļu starpību
       
 
-      saisinat(daluSumma[0], daluSumma[1], daluStarp[0], daluStarp[1]);\
+      saisinat(daluSumma[0], daluSumma[1], daluStarp[0], daluStarp[1]);
 
       if(daluSumma[0] < 0 && daluSumma[1] < 0){
          daluSumma[0] *= -1;     //Ja tiek dalīti 2 negatīvi skaitļi, tie...
@@ -114,13 +112,13 @@ int main(){
          daluStarp[0] *= -1;     //Ja tiek dalīti 2 negatīvi skaitļi, tie...
          daluStarp[1] *= -1;     //...tiek pārvērsti par pozitīvu daļu
       }
-      cout << daluSumma[0] << "/" << daluSumma[1] << endl;
+      cout << daluSumma[0] << "/" << daluSumma[1] << endl;     //tiek paziņots rezultāts
       cout << daluStarp[0] << "/" << daluStarp[1] << endl;
 
-      cout << "Vai veelaties atkaartot programmu? [1] - jaa, [0] - nee: ";
-      cin >> atkartot;
-
       while(true){
+         cout << "Vai veelaties atkaartot programmu? [1] - jaa, [0] - nee: ";
+         cin >> atkartot;
+
          if(atkartot == 1) break;
          else if(atkartot == 0) return 0;
          else continue;
