@@ -1,0 +1,184 @@
+/*Roberts Novikovs rn25007*/
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.top-section {
+    background-color: #F1F1F1;
+    align-items: center;
+    width:100%;
+    height:100px;
+    position:relative;  
+}
+.top-section img{
+    height:50px;
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+.top-section input{
+    width: 500px;
+    height: 40px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border: 1px solid gray;
+    position:absolute;
+    right:100px;
+    top:20px;
+    font-family: "Chivo", sans-serif;
+    padding-left: 20px;
+}
+.top-section button{
+    width: 70px;
+    height: 44px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    background-color: #78CA95;
+    border: 1px solid gray;
+    color: white;
+    text-align: center;
+    position: absolute;
+    right:31px;
+    top:20px;
+    font-family: "Chivo", sans-serif;
+}
+.top-section button:hover{
+    background-color:#60B481;
+    transition:300ms;
+}
+header{
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    margin-bottom: 0;
+    z-index: 10;
+}
+.nav-links {  
+    list-style: none;
+    display: flex; 
+    gap: 40px; 
+    position:relative;
+    font-family: "Chivo", sans-serif;
+}
+.nav-links li{
+    position: relative;
+    display: block;
+    text-align: left;
+}
+.nav-links a{ 
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px 10px;
+    display: block;
+}
+.nav-links li:hover > .dropdown {
+  display: block;
+}
+.nav-links a:hover{
+    color:#60B481;
+    transition:200ms;
+}
+.dropdown {
+    display:none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: white;
+    list-style: none;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgb(68, 68, 68);
+    padding: 0px;
+    margin: 0px;
+    z-index: 20;
+    font-family: "Chivo", sans-serif;
+}
+.dropdown a{
+    display:block;
+    margin:0;
+    text-decoration: none;
+    color:black;
+    font-weight: normal;
+    padding-top:20px;
+    padding-bottom: 20px;
+    padding-right: 150px;
+    border: 1px solid rgb(206, 206, 206);
+}
+.dropdown a:hover{
+    background-color: #78CA95;
+    color:white;
+    transition:200ms;
+}
+.dropdown li:first-child a{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.dropdown li:last-child a{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.home-banner{
+    width:auto;
+    height:500px;
+    top:0;
+    margin-top: 0;
+    margin-bottom: 100px;
+    background-image: url("images/concert-image.jpg");
+    background-color: rgba(0, 0, 0, 0.55);
+    background-blend-mode: darken;
+    background-size: 100%;
+    background-position-y: 50%;
+    z-index: 1;    
+}
+.background-overlay{
+    position: absolute;
+}
+.home-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+    z-index: 2;
+}
+.home-banner-content h2{
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding-top: 140px; 
+    font-size: 50px;
+    color:white;
+    font-family: "Chivo", sans-serif;
+}
+.home-banner-content p{
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding-top: 0px; 
+    font-size: 20px;
+    color:white;
+    font-family: "Spectral", sans-serif;
+}
+.home-banner-content .btn{
+    margin-top: 0px;
+    padding: 15px 20px 15px 20px; 
+    border-radius: 25px;
+    font-size:20px;
+    text-decoration: none;
+    color: white;
+    background-color:#78CA95;
+    font-family: "Chivo", sans-serif;
+}
+.home-banner-content .btn:hover{
+    background-color: #60B481;
+    transition:300ms;
+}
+
+
