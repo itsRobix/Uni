@@ -45,10 +45,11 @@ body {
     right:31px;
     top:20px;
     font-family: "Chivo", sans-serif;
+    transition: 300ms;
 }
 .top-section button:hover{
-    background-color:#60B481;
-    transition:300ms;
+    background-color:#63b87e;
+    transition: all 300ms;
 }
 header{
     background-color: #F2F2F2;
@@ -79,13 +80,14 @@ header{
     font-size: 18px;
     padding: 10px 10px;
     display: block;
+    transition: 300ms;
 }
 .nav-links li:hover > .dropdown {
   display: block;
 }
 .nav-links a:hover{
-    color:#60B481;
-    transition:200ms;
+    color:#63b87e;
+    transition: all 300ms;
 }
 .dropdown {
     display:none;
@@ -111,11 +113,13 @@ header{
     padding-bottom: 20px;
     padding-right: 150px;
     border: 1px solid rgb(206, 206, 206);
+    transition: 300ms;
+    cursor: pointer; 
 }
 .dropdown a:hover{
     background-color: #78CA95;
     color:white;
-    transition:200ms;
+    transition: all 300ms;
 }
 .dropdown li:first-child a{
     border-top-left-radius: 10px;
@@ -134,7 +138,7 @@ header{
     margin-top: 0;
     margin-bottom: 100px;
     background-image: url("images/concert-image.jpg");
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: darken;
     background-size: 100%;
     background-position-y: 50%;
@@ -173,12 +177,169 @@ header{
     font-size:20px;
     text-decoration: none;
     color: white;
-    background-color:#78CA95;
+    background-color:#7acb95;
     font-family: "Chivo", sans-serif;
+    transition: 300ms;
+    cursor: pointer; 
 }
 .home-banner-content .btn:hover{
-    background-color: #60B481;
-    transition:300ms;
+    background-color: #63b87e;
+    transition:all 300ms;
 }
 
 
+.events{
+    text-align: center;
+}
+.events h2{
+    margin-top: 0px;
+    margin-bottom: 60px; 
+    font-size: 30px;
+    color:black;
+    font-family: "Chivo", sans-serif;
+}
+.event-grid{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.events .event-card img {
+    width: 480px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    display:block;
+}
+.event-info {
+    background-color: #F2F2F2;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    height: 190px;
+}
+.event-info h3{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 30px;
+    font-family: "Chivo", sans-serif;
+}
+.event-info .date{
+    padding-top:10px;
+    margin-bottom: 0;
+    margin-top:0;
+    font-family: "Spectral", sans-serif;
+}
+.event-info .price{
+    padding-top:10px;
+    margin-top:0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #63b87e;
+    font-family: "Spectral", sans-serif;
+}
+.event-info a{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 12px 14px 12px 14px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: "Chivo", sans-serif;
+    background-color: #7acb95;
+    color:white;
+    transition: 300ms;
+    cursor: pointer;
+}
+.event-info a:hover{
+    background-color: #63b87e;
+    transition: 300ms;
+}
+.event-card {
+    transition: 300ms;
+    border-radius: 18px;
+}
+.event-card:hover {
+    transform:translateY(-5px);
+    transition: 300ms;
+    box-shadow: 0px 2px 16px rgba(68, 68, 68, 0.3);
+}
+
+
+.about {
+    background-color: #F1F1F1;
+    height: 250px;
+    text-align: center;
+    margin-top: 60px;
+}
+.about h2{
+    font-family: "Chivo", sans-serif;
+    font-size: 25px;
+    padding-top: 90px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.about p{
+    font-family: "Spectral", sans-serif;
+    padding-top: 0;
+}
+
+
+.bottom {
+    color: white;
+    background-color: #222;
+    display: flex;
+    flex-direction: row;
+    gap:320px;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.bottom a img{
+    width:300px;
+}
+.bottom h2 {
+    font-family: "Chivo", sans-serif;
+    margin-bottom: 10px;
+}
+.bottom p{
+    font-family: "Spectral", sans-serif;
+}
+.bottom ul li{
+    list-style: none;
+    padding-left: 0;
+}
+.bottom ul{
+    padding-left: 0;
+}
+.bottom-menu-item a{
+    display:block;
+    text-decoration: none;
+    color:white;
+    font-weight: normal;
+    padding-top:7px;
+    font-family: "Spectral", sans-serif;
+    text-transform: capitalize;
+    z-index: 10;
+    transition: 300ms;
+}
+.bottom-menu-item a:hover{
+    color: #7acb95;
+    transition: 300ms;
+}
+.fab {
+    color: white;
+}
+#contacts ul{
+    display: flex;
+    gap: 20px;
+}
+
+footer {
+    color: #aaa;
+    background-color: black;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    text-align: center;
+}
