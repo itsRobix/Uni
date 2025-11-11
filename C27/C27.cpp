@@ -14,8 +14,8 @@ int maxv(int a[], int n){                       //max vērtības atrašana
     int *results = new int[n*2]; //šeit tiks saglabāti rezultāti
 
     for(int i = 0; i<n; i++){  //tiek uztaisīts lists ar visām vērtībām no 1 līdz n*2
-        results[i] = a[i] + a[n*2-i-1];
-        cout << "results[" << i << "] = " << a[i] << " + " << a[n*2-i-1] << " = " << results[i] << endl; //Paziņo programmas darbības un to rezultātus
+        results[i] = a[i+1] + a[n*2-i];
+        cout << "results[" << i << "] = " << a[i+1] << " + " << a[n*2-i] << " = " << results[i] << endl; //Paziņo programmas darbības un to rezultātus
     }
 
     maxVal = results[0];
@@ -34,8 +34,8 @@ int minv(int a[], int n){                     //mazākās vērtības atrašana
     int *results = new int[n*2];
 
     for(int i = 0; i<n; i++){  //tiek uztaisīts lists ar visām vērtībām no 1 līdz n*2
-        results[i] = a[i] * a[n+i];
-        cout << "results[" << i << "] = " << a[i] << " * " << a[n+i] << " = " << results[i] << endl; //Paziņo programmas darbības un to rezultātus
+        results[i] = a[i+1] * a[n+i+1];
+        cout << "results[" << i << "] = " << a[i+1] << " * " << a[n+i+1] << " = " << results[i] << endl; //Paziņo programmas darbības un to rezultātus
     }
 
     minVal = results[0];
@@ -53,25 +53,33 @@ int minv(int a[], int n){                     //mazākās vērtības atrašana
 int main(){
 
     while(true){
-        int usrValue;
+        int usrValue = 0;
         int usrNumInList;
+        while(true){
         cout << "Ievadiet n vertibu: ";
-        cin >> usrValue; //pieņemsim, ka ievada 3
-        int n2 = usrValue*2-1; //n = 6
+            cin >> usrValue; //pieņemsim, ka ievada 3
+            if (usrValue <=0) {
+                cout << "ievaditais skaitlis <=0" << endl; 
+                continue;
+            }
+            else break;
+        }
+        
+        int n2 = usrValue*2; //n = 6
         int *a = new int[n2]; //dinamiskais masīvs ar 2n vietām
         a[0] = 0; //Pirmā [0] pozīcija listā tiek iestatīta kā 0, lai programmu varētu atkārtot bez kļūdām
 
         int atkartot = 0; //mainīgais programmas atkārtošanai
 
-        for(int i = 0; i<=n2; i++){  //tiek uztaisīts lists ar visām vērtībām no 1 līdz n*2
-            cout << "Ievadiet " << i+1 << ". skaitli: ";
+        for(int i = 1; i<=n2; i++){  //tiek uztaisīts lists ar visām vērtībām no 1 līdz n*2
+            cout << "Ievadiet " << i << ". skaitli: ";
             cin >> usrNumInList;
             a[i] = usrNumInList;
         //    cout << a[i] << endl; //-----------------testing only
         }
 
         cout << "Jusu skaitlu virkne: ";
-        for(int i = 0; i<=n2; i++){
+        for(int i = 1; i<=n2; i++){
             cout << a[i] << ", ";
         }
         cout << endl;
