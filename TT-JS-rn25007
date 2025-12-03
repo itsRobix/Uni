@@ -1,0 +1,33 @@
+function funkcija(){
+  let darbibuList = [];
+
+  return function(darbiba){     //rekursīvs - tajā iekšā test("...") "..." tiek pievienots darbibuList listam
+    darbibuList.push(darbiba);
+    return darbibuList;
+
+  };
+}
+
+const test = funkcija(); //izsaucot test("...") "..." kļūs par objektu iekšpus rekurīvā 
+
+console.log(test("Lietotajs nospieda pogu"));   //Pievieno darbibuList "Lietotājs nospieda pogu"
+console.log(test("Lietotajs pašķīra attēlu"));  //konsolē 
+
+
+
+
+let textLV = ["Sveiki", "mans", "vārds", "ir", "Roberts"];
+let textEN = ["Hello", "my", "name", "is", "Robert"];
+
+const text = "Sveiki mans vārds ir Roberts";
+const ListOfText = text.split(" "); //.split sadala teikumu pa vārdiem, katru vārdu uztaisot par atsevišķu lista daļu
+
+const translated = ListOfText.map(word => { //izveido translated listu, kurā map izveido jaunu listu no ListOfText un word => nozīmē, ka darbība tiks veikta ar vārdu
+  let index = textLV.indexOf(word);      // index = vieta pēc kārtas, kurā atrodas noteiktais vārds
+  if (index !== -1) {
+    return textEN[index];                // Aizvieto atrastos LV vārdus ar EN vārdiem
+  }
+  return word;                           // Ja nav atrasts, tad atgriež oriģinālās valodas vārdu
+});
+
+console.log(translated.join(" ")) //.join apvieno vārdus kopā ar atstarpēm starpā
